@@ -1,0 +1,149 @@
+<DOCTYPE! html>
+<head>
+	<title>JS All Together 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="row">
+	<div class="col-100">
+		<h1>Javascript All Together 2</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-100">
+		<div id="header">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-50">
+		<h3>Form Validation</h3>
+		<center>
+		<form name="email" action="#" method="post" onsubmit="return valid()">
+			<input name="user"><br /><br />
+			<input name="email"><br /><br />
+			<input type="submit">
+		</form>
+		</center>
+	</div>
+	<div class="col-50">
+		<h3>Javascript Random Number</h3>
+		<center><div id="random"></div></center>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-50">
+		<h3>Jquery slideDown()</h3>
+		<center><button id="showDay">Show Day</button></center>
+	</div>
+</div>
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.row:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.col-25 {
+	width: 25%;
+	float: left;
+	padding: 15px;
+}
+
+.col-50 {
+	width: 50%;
+	float: left;
+	padding: 15px;
+}
+
+.col-75 {
+	width: 75%;
+	float: left;
+	padding: 15px;
+}
+
+.col-100 {
+	width: 100%;
+	float: left;
+	padding: 15px;
+}
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+#header {
+	text-align: center;
+	display: none;
+}
+</style>
+
+<script>
+//welcome bar
+var day;
+switch(new Date().getDay()) {
+	case 0:
+		day = "Sunday";
+		break;
+	case 1:
+		day = "Monday";
+		break;
+	case 2:
+		day = "Tuesday";
+		break;
+	case 3:
+		day = "Wednesday";
+		break;
+	case 4:
+		day = "Thursday";
+		break;
+	case 5:
+		day = "Friday";
+		break;
+	case 6:
+		day = "Saturday";
+		break;
+}
+document.getElementById("header").innerHTML = "<h2>Today is " + day + "</h2>";
+
+//form validation
+function valid() {
+	var name = document.forms["email"]["user"].value;
+	if (name == null || name == "") {
+		alert("Need name");
+		return false;
+	}
+	var email = document.forms["email"]["email"].value;
+	if (email == null || email == "") {
+		alert("Need email");
+		return false;
+	}
+}
+
+//jquery slidedown()
+$(document).ready(function() {
+	$("#showDay").click(function() {
+		$("#header").slideDown(1500);
+	});
+});
+
+//random number
+x = Math.random()
+document.getElementById("random").innerHTML = Math.floor(x * 11);
+
+</script>
+
+</body>
+</html>
