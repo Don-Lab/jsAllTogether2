@@ -39,6 +39,10 @@
 		<h3>Jquery slideDown()</h3>
 		<center><button id="showDay">Show Day</button></center>
 	</div>
+	<div class="col-50">
+		<h3>Error Handling</h3>
+		<center><button onclick="err()">Click to see the error message</button></center>
+	</div>
 </div>
 
 <style>
@@ -147,6 +151,15 @@ $(document).ready(function() {
 x = Math.random()
 document.getElementById("random").innerHTML = Math.floor(x * 11);
 
+//error handling
+function err() {
+	try {
+		alleeert("Hello World");
+	}
+	catch(e) {
+		alert(e.message);
+	}
+}
 </script>
 
 </body>
