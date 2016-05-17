@@ -1,2 +1,2 @@
 # jsAllTogether2
-Includes random number and Jquery while also revisiting switches, form validation, and dates
+Includes random number, Jquery and error handling while also revisiting switches, form validation, and dates
